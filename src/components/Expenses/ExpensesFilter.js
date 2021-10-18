@@ -1,24 +1,24 @@
-import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import React from "react";
+import { useState } from "react/cjs/react.development";
 
-import './ExpensesFilter.css';
+import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-    const [filterValue, setFilterValue] = useState('');
-    const changeHandler=(event)=>{
-        setFilterValue(event.target.value);
-        props.onExpenseFilterSet(filterValue);
-    };
+  const [filterValue, setFilterValue] = useState("2020");
+  const changeHandler = (event) => {
+    setFilterValue(event.target.value);
+    props.onExpenseFilterSet(filterValue);
+  };
 
   return (
-    <div className='expenses-filter'>
-      <div className='expenses-filter__control'>
+    <div className="expenses-filter">
+      <div className="expenses-filter__control">
         <label>Filter by year</label>
-        <select onChange={changeHandler}>
-          <option value='2022'>2022</option>
-          <option value='2021'>2021</option>
-          <option value='2020'>2020</option>
-          <option value='2019'>2019</option>
+        <select onChange={changeHandler} value={props.selected}>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
         </select>
       </div>
     </div>
