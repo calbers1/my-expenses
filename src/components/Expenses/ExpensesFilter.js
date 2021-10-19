@@ -1,13 +1,10 @@
 import React from "react";
-import { useState } from "react/cjs/react.development";
 
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  const [filterValue, setFilterValue] = useState("2020");
   const changeHandler = (event) => {
-    setFilterValue(event.target.value);
-    props.onExpenseFilterSet(filterValue);
+    props.onExpenseFilterSet(event.target.value);
   };
 
   return (

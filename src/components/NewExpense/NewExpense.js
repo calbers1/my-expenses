@@ -2,10 +2,11 @@ import "./NewExpense.css";
 import Card from "../UI/Card";
 import ExpenseForm from "./ExpenseForm";
 const NewExpense = (props) => {
+  const numberOfExpenses = props.numberOfExpenses + 1;
   const submitExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
+      id: "e" + numberOfExpenses,
       ...enteredExpenseData,
-      id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
   };
