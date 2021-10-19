@@ -15,6 +15,10 @@ const NewExpense = (props) => {
     setExpenseBtnPressed(false);
   };
 
+  const cancelExpenseHandler = () => {
+    setExpenseBtnPressed(false);
+  };
+
   const displayBtnClickHandler = () => {
     setExpenseBtnPressed(true);
   };
@@ -24,7 +28,12 @@ const NewExpense = (props) => {
   );
 
   if (expenseBtnPressed) {
-    displayItem = <ExpenseForm onNewExpenseSubmit={submitExpenseDataHandler} />;
+    displayItem = (
+      <ExpenseForm
+        onNewExpenseSubmit={submitExpenseDataHandler}
+        cancel={cancelExpenseHandler}
+      />
+    );
   }
 
   return <Card className="new-expense">{displayItem}</Card>;
