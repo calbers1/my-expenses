@@ -1,7 +1,7 @@
 import "./NewExpense.css";
 import Card from "../UI/Card";
 import ExpenseForm from "./ExpenseForm";
-import { useState } from "react/cjs/react.development";
+import { React, useState } from "react";
 const NewExpense = (props) => {
   const numberOfExpenses = props.numberOfExpenses + 1;
   const [expenseBtnPressed, setExpenseBtnPressed] = useState(false);
